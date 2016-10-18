@@ -1,14 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h3><a href="<%= @link.url %>"><%= @link.title %></a>
+    <small>Submitted by <%= @link.user.email %></small></h3>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @link.title %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
-
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<button><%= link_to 'Go to URL', @link.url %></button> |
+<button><%= link_to 'Edit', edit_link_path(@link) %></button> |
+<button><%= link_to 'Back', links_path %></button>
