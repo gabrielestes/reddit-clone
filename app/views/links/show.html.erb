@@ -6,3 +6,16 @@
 <button><%= link_to 'Go to URL', @link.url %></button> |
 <button><%= link_to 'Edit', edit_link_path(@link) %></button> |
 <button><%= link_to 'Back', links_path %></button>
+
+<div class="btn-group pull-right">
+  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-chevron-up"></span>
+    Upvote
+    <%= @link.get_upvotes.size %>
+  <% end %>
+  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-chevron-down"></span>
+    Downvote
+    <%= @link.get_downvotes.size %>
+  <% end %>
+</div>
